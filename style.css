@@ -19,6 +19,7 @@
   --stroke: #ffffff80;
   --surface: #ffffff18;
   --surface_hover: #ffffff05;
+  --bg_color: #000000;
 
   --bg-mobile: url(./assets/bg-mobile.jpg);
   --bg-desktop: url(./assets/bg-desktop.jpg);
@@ -32,6 +33,7 @@
   --stroke: #00000080;
   --surface: #00000018;
   --surface_hover: #00000005;
+  --bg_color: #dadada;
 
   --bg-mobile: url(./assets/bg-mobile-light.jpg);
     --bg-desktop: url(./assets/bg-desktop-light.jpg);
@@ -46,7 +48,7 @@ body {
 
 body {
   font-size: 1.6rem;
-  background: var(--bg-mobile) no-repeat;
+  background: var(--bg_color) var(--bg-mobile) no-repeat;
   background-size: cover;
   color: var(--text-color);
   
@@ -225,7 +227,7 @@ input:checked + .slider::before, input:checked + .slider::after{
 
 @media (min-width: 815px) {
   body {
-    background: var(--bg-desktop) no-repeat fixed;
+    background: var(--bg_color) var(--bg-desktop) no-repeat fixed;
     background-size: cover;
   }
 }
