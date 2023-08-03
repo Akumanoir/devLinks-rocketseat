@@ -13,13 +13,14 @@
 }
 
 .colors-darkmode {
-  --text-color: #ffffff;
-  --slider-check: #ffffff;
-  --highlight: #ffffff25;
-  --stroke: #ffffff80;
-  --surface: #ffffff18;
-  --surface_hover: #ffffff05;
-  --bg_color: #000000;
+  --text-color: rgb(255, 255, 255);
+  --slider-check: rgb(255, 255, 255);
+  --highlight: rgba(255, 255, 255, 0.145);
+  --stroke: rgba(255, 255, 255, 0.502);
+  --surface: rgba(255, 255, 255, 0.094);
+  --surface_hover: rgba(255, 255, 255, 0.02);
+  --social_hover: rgba(255, 255, 255, 0.02);
+  --bg_color: rgb(0, 0, 0);
 
   --bg-mobile: url(./assets/bg-mobile.jpg);
   --bg-desktop: url(./assets/bg-desktop.jpg);
@@ -27,16 +28,17 @@
 }
 
 .colors-lightmode {
-  --text-color: #000000;
-  --slider-check: #ffffff;
-  --highlight: #00000025;
-  --stroke: #00000080;
-  --surface: #00000018;
-  --surface_hover: #00000005;
-  --bg_color: #dadada;
+  --text-color: rgb(0, 0, 0);
+  --slider-check: rgb(255, 255, 255);
+  --highlight: rgba(0, 0, 0, 0.145);
+  --stroke: rgba(0, 0, 0, 0.502);
+  --surface: rgba(0, 0, 0, 0.094);
+  --surface_hover: rgba(0, 0, 0, 0.02);
+  --social_hover: rgba(0, 0, 0, 0.1);
+  --bg_color: rgb(218, 218, 218);
 
   --bg-mobile: url(./assets/bg-mobile-light.jpg);
-    --bg-desktop: url(./assets/bg-desktop-light.jpg);
+  --bg-desktop: url(./assets/bg-desktop-light.jpg);
   --slider-simbol: url(./assets/sun.svg);
 }
 
@@ -123,23 +125,40 @@ img {
 
   text-align: center;
   cursor: pointer;
+
+  transition: background .2s;
 }
 
 #links > .button:hover {
   background-color: var(--surface_hover);
+  border: .15rem solid var(--text-color);
 }
 
 #social_links {
   display: flex;
-  gap: 2.6rem;
   justify-content: center;
+
+  font-size: 2.4rem;
+}
+
+#social_links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.6rem;
+  border-radius: 999rem;
+  transition: background .2s;
+}
+
+#social_links a:hover {
+  background-color: var(--social_hover);
 }
 
 /*-------------------------------------------------------------------------------------------------------------------*/
 
 /* The switch - the box around the slider */
 #switch {
-  padding: 0;
+  padding: .4rem 0;
 }
 
 .switch {
@@ -165,6 +184,8 @@ img {
   bottom: 0;
   background-color: var(--surface);
   border: 0.1rem solid var(--stroke);
+  backdrop-filter: blur(.4rem);
+  -webkit-backdrop-filter: blur(.4rem);
 
   width: 6.4rem;
   height: 2.4rem;
@@ -202,7 +223,7 @@ img {
   
 }
 
-.slider:active::after {
+.slider:hover::after {
   opacity: 1;
 }
 
